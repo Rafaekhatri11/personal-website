@@ -36,7 +36,7 @@ export default function Home() {
         <Marquee />
         <Work />
         <Results />
-        <Stack /> 
+        <Stack />
         <Services />
         <Process />
         <About />
