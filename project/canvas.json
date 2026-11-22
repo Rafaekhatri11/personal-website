@@ -1,0 +1,250 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "CaseStudy-PointHotel.dc.html": {
+      "h": 3500,
+      "is_interactive": true,
+      "title": "Project 6 · The Point Hotel & Suites",
+      "w": 1440,
+      "x": 9590,
+      "y": 1300
+    },
+    "CaseStudy-SaaS.dc.html": {
+      "h": 3550,
+      "is_interactive": true,
+      "title": "Project 3 · SaaS Platform (Serverless)",
+      "w": 1440,
+      "x": 5030,
+      "y": 1300
+    },
+    "CaseStudy-SaddleFit.dc.html": {
+      "h": 3500,
+      "is_interactive": true,
+      "title": "Project 2 · SaddleFit.io",
+      "w": 1440,
+      "x": 3510,
+      "y": 1300
+    },
+    "CaseStudy-Trip.dc.html": {
+      "h": 3150,
+      "is_interactive": true,
+      "title": "Project 4 · Trip Management System",
+      "w": 1440,
+      "x": 6550,
+      "y": 1300
+    },
+    "CaseStudy-WMT.dc.html": {
+      "h": 3550,
+      "is_interactive": true,
+      "title": "Project 5 · WMT Energy Solutions",
+      "w": 1440,
+      "x": 8070,
+      "y": 1300
+    },
+    "CaseStudy.dc.html": {
+      "h": 3500,
+      "is_interactive": true,
+      "title": "Project 1 · LedgerIQ",
+      "w": 1440,
+      "x": 1990,
+      "y": 1300
+    },
+    "Hero-Blueprint.dc.html": {
+      "h": 900,
+      "title": "C · Blueprint",
+      "w": 1440,
+      "x": 3040,
+      "y": 0
+    },
+    "Hero-Console.dc.html": {
+      "h": 900,
+      "title": "B · Console",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "Hero-Pal-A.dc.html": {
+      "h": 900,
+      "title": "A · Midnight + Electric Blue",
+      "w": 1440,
+      "x": 0,
+      "y": -1400
+    },
+    "Hero-Pal-B.dc.html": {
+      "h": 900,
+      "title": "B · Warm Ivory + Burnt Orange",
+      "w": 1440,
+      "x": 1520,
+      "y": -1400
+    },
+    "Hero-Pal-C.dc.html": {
+      "h": 900,
+      "title": "C · Deep Navy + Emerald",
+      "w": 1440,
+      "x": 3040,
+      "y": -1400
+    },
+    "Hero-Pal-D.dc.html": {
+      "h": 900,
+      "title": "D · Warm Ivory + Brick Red (#C22E22)",
+      "w": 1440,
+      "x": 4560,
+      "y": -1400
+    },
+    "Hero-Signal.dc.html": {
+      "h": 900,
+      "title": "A · Signal (recommended)",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "M-LedgerIQ.dc.html": {
+      "h": 3000,
+      "is_interactive": true,
+      "title": "Mobile · LedgerIQ",
+      "w": 390,
+      "x": 1990,
+      "y": 5300
+    },
+    "M-PointHotel.dc.html": {
+      "h": 2950,
+      "is_interactive": true,
+      "title": "Mobile · The Point Hotel",
+      "w": 390,
+      "x": 9590,
+      "y": 5300
+    },
+    "M-SaaS.dc.html": {
+      "h": 3050,
+      "is_interactive": true,
+      "title": "Mobile · SaaS Platform",
+      "w": 390,
+      "x": 5030,
+      "y": 5300
+    },
+    "M-SaddleFit.dc.html": {
+      "h": 3000,
+      "is_interactive": true,
+      "title": "Mobile · SaddleFit.io",
+      "w": 390,
+      "x": 3510,
+      "y": 5300
+    },
+    "M-Trip.dc.html": {
+      "h": 2700,
+      "is_interactive": true,
+      "title": "Mobile · Trip Management",
+      "w": 390,
+      "x": 6550,
+      "y": 5300
+    },
+    "M-WMT.dc.html": {
+      "h": 3000,
+      "is_interactive": true,
+      "title": "Mobile · WMT Energy",
+      "w": 390,
+      "x": 8070,
+      "y": 5300
+    },
+    "Main.dc.html": {
+      "h": 9310,
+      "is_interactive": true,
+      "title": "Homepage — desktop (Ivory + Brick Red)",
+      "w": 1440,
+      "x": 0,
+      "y": 1300
+    },
+    "Mobile.dc.html": {
+      "h": 4540,
+      "is_interactive": true,
+      "title": "Homepage — mobile (Ivory + Brick Red)",
+      "w": 390,
+      "x": 1520,
+      "y": 1300
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-29T20:12:35Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "legend": {
+      "fill": "blue",
+      "size": 24,
+      "text": "How to read the designs\n\n• Theme: Warm Ivory #F6F5F1 + Brick Red #C22E22, Sora headings, Manrope body, JetBrains Mono labels\n• Grey hatched boxes = screenshots still to add\n• Blue dashed pills = motion & interaction notes\n• [Brackets] = content you still need to supply\n\nEvery page has a Tweaks panel: switch off “showNotes” to see the clean design, or “showShapes” to compare without the red wash and squares.",
+      "w": 380,
+      "x": 11110,
+      "y": 1300
+    },
+    "sitemap": {
+      "fill": "orange",
+      "size": 24,
+      "text": "Site map\n\nrafaek.com  →  ONE scrolling page\n  #work · #stack · #services · #about · #faq · #contact\n\nOnly projects get their own page:\n  /work/ledgeriq\n  /work/saddlefit\n  /work/saas-platform\n  /work/trip-management\n  /work/wmt-energy\n  /work/the-point-hotel\n\nOpens as a full-screen expand from the card, so it still feels like one page, but each project has a shareable URL that Google can index. ✕ / Esc / Back returns to the same scroll spot.\n\nPress Play on the desktop board and click a project card to try it.",
+      "w": 380,
+      "x": 11110,
+      "y": 1900
+    },
+    "t0": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "Landing hero — color combinations",
+      "w": 240,
+      "x": 0,
+      "y": -1700
+    },
+    "t1": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "Three visual directions — first screen",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Website: one-page homepage + project detail pages",
+      "w": 240,
+      "x": 0,
+      "y": 1000
+    },
+    "t3": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Project detail pages — mobile",
+      "w": 240,
+      "x": 1990,
+      "y": 5000
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Mobile.dc.html",
+    "CaseStudy.dc.html",
+    "CaseStudy-SaddleFit.dc.html",
+    "CaseStudy-SaaS.dc.html",
+    "CaseStudy-Trip.dc.html",
+    "CaseStudy-WMT.dc.html",
+    "CaseStudy-PointHotel.dc.html",
+    "Hero-Signal.dc.html",
+    "Hero-Console.dc.html",
+    "Hero-Blueprint.dc.html",
+    "M-LedgerIQ.dc.html",
+    "M-SaddleFit.dc.html",
+    "M-SaaS.dc.html",
+    "M-Trip.dc.html",
+    "M-WMT.dc.html",
+    "M-PointHotel.dc.html",
+    "Hero-Pal-A.dc.html",
+    "Hero-Pal-B.dc.html",
+    "Hero-Pal-C.dc.html",
+    "Hero-Pal-D.dc.html"
+  ],
+  "pages": [],
+  "title": "rafaek.com Wireframes"
+}

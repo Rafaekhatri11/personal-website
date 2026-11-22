@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>rafaek.com mobile wireframe</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:#1B1B19;background:#F6F5F1}
+a{color:#1B1B19}a:hover{color:#C22E22}
+.ph{background-color:#ECE9E1;background-image:repeating-linear-gradient(45deg,transparent 0 10px,rgba(27,27,25,.05) 10px 11px)}
+.note{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.4;color:#1F4FD8;background:#EAF0FF;border:1px dashed #1F4FD8;border-radius:4px;padding:5px 8px}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5E5D58}
+h1,h2,h3{font-family:'Sora',sans-serif}
+.hide-notes .note{display:none !important}
+.shape{position:absolute;pointer-events:none;z-index:-1}
+.no-shapes .shape{display:none !important}
+.tile{position:absolute;background:rgba(194,46,34,.13);animation:rkPulse 7s ease-in-out infinite}
+.tile-dark{position:absolute;background:rgba(194,46,34,.32);animation:rkPulse 7s ease-in-out infinite}
+@keyframes rkPulse{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes rkBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.bob{animation:rkBob 6s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.tile,.tile-dark,.bob{animation:none}}
+.totop{position:relative;display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#1A1A18;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.totop .ic{width:64px;height:64px;border-radius:50%;background:#C22E22;color:#F6F5F1;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(194,46,34,.32),0 0 0 6px rgba(194,46,34,.12);transition:transform .25s ease,box-shadow .25s ease}
+.totop .ic svg{animation:rkUp 2.2s ease-in-out infinite}
+.totop:hover .ic{transform:translateY(-4px);box-shadow:0 12px 26px rgba(194,46,34,.4),0 0 0 9px rgba(194,46,34,.16)}
+@keyframes rkUp{0%,100%{transform:translateY(2px)}50%{transform:translateY(-3px)}}
+@media (prefers-reduced-motion: reduce){.totop .ic svg{animation:none}}
+/* About & team: one profile at a time, auto-advance every 3s (9s loop, 3 people) */
+.team-slide{animation:teamSlide 9s infinite both}
+.team-num{animation:teamShow 9s infinite both}
+.team-tab{animation:teamTab 9s infinite both}
+.team-bar{animation:teamBar 9s linear infinite both}
+.team-slide.t1,.team-num.t1,.team-tab.t1,.team-bar.t1{animation-delay:0s}
+.team-slide.t2,.team-num.t2,.team-tab.t2,.team-bar.t2{animation-delay:-6s}
+.team-slide.t3,.team-num.t3,.team-tab.t3,.team-bar.t3{animation-delay:-3s}
+.team:hover .team-slide,.team:hover .team-num,.team:hover .team-tab,.team:hover .team-bar{animation-play-state:paused}
+@keyframes teamSlide{0%{opacity:0;transform:translateX(28px);visibility:visible}4%,33.3%{opacity:1;transform:none;visibility:visible}37.3%{opacity:0;transform:translateX(-28px);visibility:hidden}100%{opacity:0;transform:translateX(-28px);visibility:hidden}}
+@keyframes teamShow{0%,33.3%{opacity:1}34%,100%{opacity:0}}
+@keyframes teamTab{0%,33.3%{background:#1B1B19;color:#F6F5F1;border-color:#1B1B19}35%,100%{background:#FFFFFF;color:#1B1B19;border-color:#D9D6CC}}
+@keyframes teamBar{0%{width:0}33.3%{width:100%}33.4%,100%{width:0}}
+@media (prefers-reduced-motion: reduce){.team-slide,.team-num,.team-tab,.team-bar{animation:none}.team-slide:not(.t1),.team-num:not(.t1){opacity:0;visibility:hidden}.team-tab.t1{background:#1B1B19;color:#F6F5F1;border-color:#1B1B19}.team-bar.t1{width:100%}}
+</style>
+</helmet>
+<div class="{{rootClass}}" style="width: 390px; height: 4540px; box-sizing: border-box; background: #F6F5F1; position: relative; overflow: hidden; isolation: isolate; display: flex; flex-direction: column">
+
+  <header style="height: 64px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #D9D6CC">
+    <div style="width: 34px; height: 34px; border-radius: 8px; background: #C22E22; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px">RK</div>
+    <button type="button" aria-label="Open menu" style="width: 44px; height: 44px; border: 1px solid #D9D6CC; border-radius: 12px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1B1B19" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </header>
+  <div style="padding: 8px 20px 0"><span class="note">Menu → full-screen overlay, links stagger in</span></div>
+
+  <section style="padding: 24px 20px 28px; display: flex; flex-direction: column; gap: 18px">
+    <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #D9D6CC; background: #FFFFFF; border-radius: 999px; padding: 6px 12px; font-size: 12px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #2E7D32"></span>Open to freelance, contract &amp; full-time</span>
+    <h1 style="margin: 0; font-size: 38px; line-height: 1.06; letter-spacing: -0.02em; font-weight: 700">I build your product, then help the right people find it.</h1>
+    <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3F3E3A">Web apps and websites, social media creatives and paid ad campaigns. 5+ years, 50+ projects delivered.</p>
+    <a href="#" style="text-decoration: none; text-align: center; background: #C22E22; color: #FFFFFF; padding: 16px; border-radius: 999px; font-size: 16px; font-weight: 600">Book a 30-min call</a>
+    <a href="#" style="text-decoration: none; text-align: center; border: 1px solid #1B1B19; padding: 15px; border-radius: 999px; font-size: 16px">See my work</a>
+    <div style="margin-top: 8px; background: #FFFFFF; border: 1px solid #D9D6CC; border-radius: 18px; padding: 4px 16px; display: flex; flex-direction: column">
+      <a href="#" style="text-decoration: none; color: #1B1B19; display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid #D9D6CC">
+        <span style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: #F8E5E2; color: #C22E22; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M13.5 5l-3 14"/></svg></span>
+        <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span class="lbl">01 · Build</span><span style="font-size: 16px; font-weight: 600">Web apps, websites &amp; cloud</span></span><span>→</span>
+      </a>
+      <a href="#" style="text-decoration: none; color: #1B1B19; display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid #D9D6CC">
+        <span style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: #F8E5E2; color: #C22E22; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg></span>
+        <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span class="lbl">02 · Create</span><span style="font-size: 16px; font-weight: 600">Social media creatives</span></span><span>→</span>
+      </a>
+      <a href="#" style="text-decoration: none; color: #1B1B19; display: flex; align-items: center; gap: 14px; padding: 14px 0">
+        <span style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: #F8E5E2; color: #C22E22; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-5v12L3 13z"/><path d="M7 14v4a2 2 0 0 0 4 0v-2.7"/><path d="M21 10v4"/></svg></span>
+        <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span class="lbl">03 · Advertise</span><span style="font-size: 16px; font-weight: 600">Digital advertising</span></span><span>→</span>
+      </a>
+    </div>
+    <span class="note" style="align-self: flex-start">Rows slide in one by one · tap → jumps to that service</span>
+  </section>
+
+  <section style="padding: 28px 0 24px; display: flex; flex-direction: column; gap: 16px">
+    <div style="padding: 0 20px; display: flex; flex-direction: column; gap: 8px">
+      <div class="lbl" style="color: #C22E22">Selected work</div>
+      <h2 style="margin: 0; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em">Products that ship. Campaigns that perform.</h2>
+      <span class="note" style="align-self: flex-start">Swipe carousel · cards snap · tap opens the project page</span>
+    </div>
+    <div style="display: flex; gap: 12px; padding: 0 20px; overflow: hidden">
+      <a href="M-LedgerIQ.dc.html" style="text-decoration: none; color: #1B1B19; flex-shrink: 0; width: 300px; background: #FFFFFF; border: 1px solid #D9D6CC; border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 12px">
+        <div class="ph" style="height: 190px; border-radius: 10px"></div>
+        <div style="padding: 0 6px 6px; display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 20px">LedgerIQ</h3><div style="font-size: 14px; font-weight: 600">90% less manual entry</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">Next.js · Python · FastAPI · AWS</div></div>
+      </a>
+      <a href="M-SaddleFit.dc.html" style="text-decoration: none; color: #1B1B19; flex-shrink: 0; width: 300px; background: #FFFFFF; border: 1px solid #D9D6CC; border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 12px">
+        <div class="ph" style="height: 190px; border-radius: 10px"></div>
+        <div style="padding: 0 6px 6px; display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 20px">SaddleFit.io</h3><div style="font-size: 14px; font-weight: 600">0–100 fit score marketplace</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">Next.js · Lambda · GraphQL · Stripe</div></div>
+      </a>
+      <a href="M-Ads.dc.html" style="text-decoration: none; color: #1B1B19; flex-shrink: 0; width: 300px; background: #FFFFFF; border: 1px solid #C22E22; border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 12px">
+        <div class="ph" style="height: 190px; border-radius: 10px; position: relative; display: flex; align-items: center; justify-content: center; padding-top: 12px; box-sizing: border-box"><span style="position: absolute; left: 8px; top: 8px; font-size: 11px; background: #C22E22; color: #FFFFFF; border-radius: 999px; padding: 3px 9px">Meta · Instagram</span><div style="width: 38%; aspect-ratio: 4/5; flex-shrink: 0; margin-top: 14px; border-radius: 8px; padding: 9px; box-sizing: border-box; background: #C22E22; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 6px 14px rgba(27,27,25,0.14)"><span style="font-size: 8px; color: #FFFFFF; font-weight: 600">kinara.coffee</span><div style="font-family: 'Sora', sans-serif; font-size: 12px; line-height: 1.12; font-weight: 700; color: #FFFFFF">Fresh roasted. Delivered in 48h.</div><span style="align-self: flex-start; font-size: 8px; font-weight: 700; background: #FFFFFF; color: #C22E22; border-radius: 999px; padding: 3px 9px">Shop now</span></div></div>
+        <div style="padding: 0 6px 6px; display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 20px">Kinara Coffee Roasters</h3><div style="font-size: 14px; font-weight: 600; color: #C22E22">4.2x ROAS · −38% cost per purchase</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">Meta Ads · GA4 · Pixel &amp; CAPI</div></div>
+      </a>
+      <a href="M-Ads.dc.html" style="text-decoration: none; color: #1B1B19; flex-shrink: 0; width: 300px; background: #FFFFFF; border: 1px solid #C22E22; border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 12px">
+        <div class="ph" style="height: 190px; border-radius: 10px; position: relative; display: flex; align-items: center; justify-content: center; padding-top: 12px; box-sizing: border-box"><span style="position: absolute; left: 8px; top: 8px; font-size: 11px; background: #C22E22; color: #FFFFFF; border-radius: 999px; padding: 3px 9px">Google Search</span><div style="width: 38%; aspect-ratio: 4/5; flex-shrink: 0; margin-top: 14px; border-radius: 8px; padding: 9px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 4px; font-family: Arial, sans-serif; box-shadow: 0 6px 14px rgba(27,27,25,0.10)"><b style="font-size: 7px">Sponsored</b><span style="font-size: 7px; color: #3F3E3A">amandental.pk</span><div style="font-size: 10px; line-height: 1.2; color: #1A0DAB">Aman Dental Care | Book a Check-up Today</div><div style="font-size: 7px; line-height: 1.35; color: #3F3E3A">Same-week appointments. Free first consultation.</div><span style="margin-top: auto; font-size: 7px; color: #5E5D58">★ 4.9 · 1,800+ reviews</span></div></div>
+        <div style="padding: 0 6px 6px; display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 20px">Aman Dental Care</h3><div style="font-size: 14px; font-weight: 600; color: #C22E22">−41% cost per lead · 180 bookings/mo</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">Google Ads · Call extensions · GA4</div></div>
+      </a>
+      <a href="M-Ads.dc.html" style="text-decoration: none; color: #1B1B19; flex-shrink: 0; width: 300px; background: #FFFFFF; border: 1px solid #C22E22; border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 12px">
+        <div class="ph" style="height: 190px; border-radius: 10px; position: relative; display: flex; align-items: center; justify-content: center; padding-top: 12px; box-sizing: border-box"><span style="position: absolute; left: 8px; top: 8px; font-size: 11px; background: #C22E22; color: #FFFFFF; border-radius: 999px; padding: 3px 9px">Meta · Reels</span><div style="width: 38%; aspect-ratio: 4/5; flex-shrink: 0; margin-top: 14px; border-radius: 8px; padding: 9px; box-sizing: border-box; background: #1B1B19; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 6px 14px rgba(27,27,25,0.18)"><span style="align-self: flex-end; width: 26px; height: 26px; border-radius: 50%; background: #C22E22; color: #FFFFFF; font-size: 6px; line-height: 1.1; text-align: center; font-weight: 800; display: flex; align-items: center; justify-content: center">7 DAYS<br>FREE</span><div style="font-family: 'Sora', sans-serif; font-size: 12px; line-height: 1.12; font-weight: 700; color: #F6F5F1">Your workout. Zero excuses.</div><span style="align-self: flex-start; font-size: 8px; font-weight: 700; background: #F6F5F1; color: #1B1B19; border-radius: 999px; padding: 3px 9px">Install now</span></div></div>
+        <div style="padding: 0 6px 6px; display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 20px">Pulse Fitness App</h3><div style="font-size: 14px; font-weight: 600; color: #C22E22">−32% cost per install · 12k installs/mo</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">Meta App Ads · Reels · MMP</div></div>
+      </a>
+    </div>
+    <div style="display: flex; gap: 6px; justify-content: center"><span style="width: 18px; height: 6px; border-radius: 3px; background: #1B1B19"></span><span style="width: 6px; height: 6px; border-radius: 3px; background: #D9D6CC"></span><span style="width: 6px; height: 6px; border-radius: 3px; background: #D9D6CC"></span><span style="width: 6px; height: 6px; border-radius: 3px; background: #D9D6CC"></span><span style="width: 6px; height: 6px; border-radius: 3px; background: #D9D6CC"></span><span style="width: 6px; height: 6px; border-radius: 3px; background: #D9D6CC"></span><span style="width: 6px; height: 6px; border-radius: 3px; background: #C22E22"></span><span style="width: 6px; height: 6px; border-radius: 3px; background: #C22E22"></span><span style="width: 6px; height: 6px; border-radius: 3px; background: #C22E22"></span></div>
+  </section>
+
+  <section style="padding: 16px 20px 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+    <div style="border-top: 2px solid #1B1B19; padding-top: 12px"><div style="font-size: 34px; font-weight: 700; color: #C22E22">50+</div><div style="font-size: 13px; color: #3F3E3A">projects delivered</div></div>
+    <div style="border-top: 2px solid #1B1B19; padding-top: 12px"><div style="font-size: 34px; font-weight: 700; color: #C22E22">90%</div><div style="font-size: 13px; color: #3F3E3A">less manual entry (LedgerIQ)</div></div>
+    <div style="border-top: 2px solid #1B1B19; padding-top: 12px"><div style="font-size: 34px; font-weight: 700; color: #C22E22">~35%</div><div style="font-size: 13px; color: #3F3E3A">lower infra cost</div></div>
+    <div style="border-top: 2px solid #1B1B19; padding-top: 12px"><div style="font-size: 34px; font-weight: 700; color: #C22E22">15 min</div><div style="font-size: 13px; color: #3F3E3A">deploys (from 2h+)</div></div>
+  </section>
+
+  <section style="padding: 32px 20px 8px; display: flex; flex-direction: column; gap: 14px">
+    <div class="lbl">Tech stack</div>
+    <div style="display: flex; flex-direction: column; gap: 6px"><div style="font-size: 14px; font-weight: 600">Frontend</div><div style="font-size: 14px; color: #3F3E3A; line-height: 1.5">React · Next.js · TypeScript · Angular · Vue · Tailwind · GSAP · Webflow · Shopify</div></div>
+    <div style="display: flex; flex-direction: column; gap: 6px"><div style="font-size: 14px; font-weight: 600">Backend &amp; data</div><div style="font-size: 14px; color: #3F3E3A; line-height: 1.5">Node.js · NestJS · Python · FastAPI · Java · GraphQL · PostgreSQL · DynamoDB · MongoDB</div></div>
+    <div style="display: flex; flex-direction: column; gap: 6px"><div style="font-size: 14px; font-weight: 600">Cloud &amp; DevOps</div><div style="font-size: 14px; color: #3F3E3A; line-height: 1.5">Lambda · API Gateway · Cognito · ECS · RDS · Docker · CDK · CodePipeline</div></div>
+    <span class="note" style="align-self: flex-start">Grouped chips on mobile, tap group to expand</span>
+  </section>
+
+  <section style="padding: 32px 20px; background: #FFFFFF; border-top: 1px solid #D9D6CC; border-bottom: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 4px">
+    <div class="lbl" style="margin-bottom: 12px">How I can help</div>
+    <div style="font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; color: #C22E22; padding-top: 4px">Build · Development &amp; cloud</div>
+    <div style="padding: 16px 0; border-bottom: 1px solid #D9D6CC; display: flex; justify-content: space-between; font-size: 17px; font-weight: 600"><span>Full-stack SaaS &amp; web apps</span><span>+</span></div>
+    <div style="padding: 16px 0; border-bottom: 1px solid #D9D6CC; display: flex; justify-content: space-between; font-size: 17px; font-weight: 600"><span>Websites that convert</span><span>+</span></div>
+    <div style="padding: 16px 0; border-bottom: 1px solid #D9D6CC; display: flex; justify-content: space-between; font-size: 17px; font-weight: 600"><span>Serverless backends</span><span>+</span></div>
+    <div style="padding: 16px 0; border-bottom: 1px solid #D9D6CC; display: flex; justify-content: space-between; font-size: 17px; font-weight: 600"><span>AI features &amp; automation</span><span>+</span></div>
+    <div style="padding: 16px 0; border-bottom: 1px solid #D9D6CC; display: flex; justify-content: space-between; font-size: 17px; font-weight: 600"><span>Free AWS cost audit</span><span>+</span></div>
+    <div style="padding: 16px 0; display: flex; justify-content: space-between; font-size: 17px; font-weight: 600"><span>CI/CD &amp; DevOps</span><span>+</span></div>
+    <div style="display: flex; align-items: center; gap: 10px; padding-top: 24px"><span style="font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; color: #C22E22">Grow · Creative &amp; advertising</span><span style="font-size: 11px; font-weight: 600; background: #C22E22; color: #FFFFFF; border-radius: 999px; padding: 3px 9px">New</span></div>
+    <div style="padding: 16px 0; border-bottom: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 8px"><div style="display: flex; justify-content: space-between; font-size: 17px; font-weight: 600"><span>Social media creatives</span><span>−</span></div><p style="margin: 0; font-size: 14px; line-height: 1.5; color: #3F3E3A">On-brand posts, carousels, stories and reel covers, designed as one system.</p></div>
+    <div style="padding: 16px 0; display: flex; justify-content: space-between; font-size: 17px; font-weight: 600"><span>Digital advertising</span><span>+</span></div>
+  </section>
+
+  <section style="padding: 40px 20px; display: flex; flex-direction: column; gap: 14px">
+    <div class="lbl">Process · About · Testimonials · FAQ</div>
+    <div class="ph" style="height: 90px; border-radius: 12px; display: flex; align-items: center; justify-content: center"><span class="lbl">Process — vertical steps</span></div>
+    <div class="lbl" style="color: #C22E22; margin-top: 8px">About &amp; team</div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px"><div class="team-tab t1" style="background: #FFFFFF; border: 1px solid #D9D6CC; border-radius: 12px; padding: 8px 6px; text-align: center"><span style="display: block; font-size: 13px; font-weight: 600">Rafae</span><span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; opacity: .7">Build</span></div><div class="team-tab t2" style="background: #FFFFFF; border: 1px solid #D9D6CC; border-radius: 12px; padding: 8px 6px; text-align: center"><span style="display: block; font-size: 13px; font-weight: 600">[Name]</span><span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; opacity: .7">Create</span></div><div class="team-tab t3" style="background: #FFFFFF; border: 1px solid #D9D6CC; border-radius: 12px; padding: 8px 6px; text-align: center"><span style="display: block; font-size: 13px; font-weight: 600">[Name]</span><span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; opacity: .7">Advertise</span></div></div>
+    <div class="team-stage" style="display: grid; overflow: hidden">
+      <div class="team-slide t1" style="grid-area: 1 / 1; background: #FFFFFF; border: 1px solid #1B1B19; border-radius: 18px; padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+        <div style="display: flex; gap: 14px; align-items: flex-end"><div style="flex-shrink: 0; width: 92px; height: 114px; position: relative"><div style="position: absolute; left: 0; right: 0; bottom: 0; height: 92px; border-radius: 46px 46px 10px 10px; background: #F6F5F1; border: 1px solid #D9D6CC"></div><div style="position: absolute; left: 0; right: 0; bottom: 0; height: 114px; border-radius: 0 0 10px 10px; overflow: hidden; display: flex; align-items: flex-end; justify-content: center"><img src="/_blob/248e7a0dec7aa6d0f76c9d4df519daa7" alt="Muhammad Rafae Khatri" style="width: 96px; display: block"></div></div><div style="display: flex; flex-direction: column; gap: 5px"><div style="display: flex; gap: 6px; flex-wrap: wrap"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; background: #C22E22; color: #FFFFFF; border-radius: 999px; padding: 3px 9px; white-space: nowrap">Founder · Lead</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; border: 1px solid #C22E22; color: #C22E22; border-radius: 999px; padding: 3px 9px; white-space: nowrap">Build</span></div><div style="font-family: 'Sora', sans-serif; font-size: 17px; font-weight: 600; line-height: 1.2">Muhammad Rafae Khatri</div><div style="font-size: 12px; color: #5E5D58">Remote · US &amp; UK hours</div></div></div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #3F3E3A">I handle everything from the interface to the infrastructure, so products ship faster and scale cleanly.</p>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid #D9D6CC"><div style="padding: 10px 0; border-bottom: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">Jan 2023 — now</span><span style="font-size: 14px;"><b>GeeksVisor</b> · Senior Full Stack / Lead Developer</span></div><div style="padding: 10px 0; border-bottom: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">Nov 2021 — Jan 2023</span><span style="font-size: 14px;"><b>ElkTech</b> · AWS Backend Developer</span></div><div style="padding: 10px 0; border-bottom: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">Aug 2019 — May 2020</span><span style="font-size: 14px;"><b>CodeBustersPro</b> · MERN Stack Developer</span></div></div>
+        <a href="#" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-size: 13px; font-weight: 600; color: #C22E22; border: 1px solid #C22E22; border-radius: 999px; padding: 8px 14px">Download résumé (PDF) <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="team-slide t2" style="grid-area: 1 / 1; background: #FFFFFF; border: 1px solid #1B1B19; border-radius: 18px; padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+        <div style="display: flex; gap: 14px; align-items: flex-end"><div class="ph" style="flex-shrink: 0; width: 92px; height: 92px; margin-top: 22px; border-radius: 46px 46px 10px 10px; display: flex; align-items: center; justify-content: center"><span class="lbl" style="font-size: 10px">Photo</span></div><div style="display: flex; flex-direction: column; gap: 5px"><div style="display: flex; gap: 6px; flex-wrap: wrap"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; border: 1px solid #C22E22; color: #C22E22; border-radius: 999px; padding: 3px 9px; white-space: nowrap">Create</span></div><div style="font-family: 'Sora', sans-serif; font-size: 17px; font-weight: 600; line-height: 1.2">[Teammate name]</div><div style="font-size: 12px; color: #5E5D58">Graphic &amp; social media designer</div></div></div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #3F3E3A">[2–3 lines: what they design and what they are best at.]</p>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid #D9D6CC"><div style="padding: 10px 0; border-bottom: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">[Year] — now</span><span style="font-size: 14px; color: #5E5D58;"><b>[Company]</b> · [Role]</span></div><div style="padding: 10px 0; border-bottom: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">[Year] — [Year]</span><span style="font-size: 14px; color: #5E5D58;"><b>[Company]</b> · [Role]</span></div></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #3F3E3A; background: #F6F5F1; border: 1px solid #D9D6CC; border-radius: 6px; padding: 4px 9px">[Figma]</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #3F3E3A; background: #F6F5F1; border: 1px solid #D9D6CC; border-radius: 6px; padding: 4px 9px">[Photoshop]</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #3F3E3A; background: #F6F5F1; border: 1px solid #D9D6CC; border-radius: 6px; padding: 4px 9px">[Illustrator]</span></div>
+      </div>
+      <div class="team-slide t3" style="grid-area: 1 / 1; background: #FFFFFF; border: 1px solid #1B1B19; border-radius: 18px; padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+        <div style="display: flex; gap: 14px; align-items: flex-end"><div class="ph" style="flex-shrink: 0; width: 92px; height: 92px; margin-top: 22px; border-radius: 46px 46px 10px 10px; display: flex; align-items: center; justify-content: center"><span class="lbl" style="font-size: 10px">Photo</span></div><div style="display: flex; flex-direction: column; gap: 5px"><div style="display: flex; gap: 6px; flex-wrap: wrap"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; border: 1px solid #C22E22; color: #C22E22; border-radius: 999px; padding: 3px 9px; white-space: nowrap">Advertise</span></div><div style="font-family: 'Sora', sans-serif; font-size: 17px; font-weight: 600; line-height: 1.2">[Teammate name]</div><div style="font-size: 12px; color: #5E5D58">Performance marketer · Meta &amp; Google Ads</div></div></div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #3F3E3A">[2–3 lines: platforms, industries and results they are proudest of.]</p>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid #D9D6CC"><div style="padding: 10px 0; border-bottom: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">[Year] — now</span><span style="font-size: 14px; color: #5E5D58;"><b>[Company / Agency]</b> · [Role]</span></div><div style="padding: 10px 0; border-bottom: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">[Year] — [Year]</span><span style="font-size: 14px; color: #5E5D58;"><b>[Company]</b> · [Role]</span></div><div style="padding: 10px 0; border-bottom: 1px solid #D9D6CC; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5E5D58">Certifications</span><span style="font-size: 14px; color: #5E5D58;"><b>[Certification]</b> · [Issuer]</span></div></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #3F3E3A; background: #F6F5F1; border: 1px solid #D9D6CC; border-radius: 6px; padding: 4px 9px">[Meta Ads]</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #3F3E3A; background: #F6F5F1; border: 1px solid #D9D6CC; border-radius: 6px; padding: 4px 9px">[Google Ads]</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #3F3E3A; background: #F6F5F1; border: 1px solid #D9D6CC; border-radius: 6px; padding: 4px 9px">[GA4]</span></div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between"><div style="display: flex; gap: 6px"><span style="position: relative; width: 32px; height: 4px; border-radius: 2px; background: #D9D6CC; overflow: hidden"><span class="team-bar t1" style="position: absolute; left: 0; top: 0; bottom: 0; background: #C22E22"></span></span><span style="position: relative; width: 32px; height: 4px; border-radius: 2px; background: #D9D6CC; overflow: hidden"><span class="team-bar t2" style="position: absolute; left: 0; top: 0; bottom: 0; background: #C22E22"></span></span><span style="position: relative; width: 32px; height: 4px; border-radius: 2px; background: #D9D6CC; overflow: hidden"><span class="team-bar t3" style="position: absolute; left: 0; top: 0; bottom: 0; background: #C22E22"></span></span></div><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5E5D58"><span style="display: inline-grid; color: #1B1B19; font-weight: 700"><span class="team-num t1" style="grid-area: 1 / 1">01</span><span class="team-num t2" style="grid-area: 1 / 1">02</span><span class="team-num t3" style="grid-area: 1 / 1">03</span></span> / 03</span></div>
+    <span class="note" style="align-self: flex-start">One profile at a time · next person every 3s once in view · swipe / tabs jump</span>
+    <div class="ph" style="height: 90px; border-radius: 12px; display: flex; align-items: center; justify-content: center"><span class="lbl">Testimonials — swipe</span></div>
+    <div class="ph" style="height: 90px; border-radius: 12px; display: flex; align-items: center; justify-content: center"><span class="lbl">FAQ accordion</span></div>
+  </section>
+
+  <section style="position: relative; isolation: isolate; overflow: hidden; margin: 0 12px; padding: 36px 20px; background: #1B1B19; color: #F6F5F1; border-radius: 22px; display: flex; flex-direction: column; gap: 16px">
+  <div class="shape" style="left: 0; top: 0; width: 100%; height: 100%; background: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(194,46,34,.40) 0%, rgba(194,46,34,0) 100%)"></div><div class="shape" style="inset: 0"><div class="tile-dark" style="right: 0; top: 0; width: 64px; height: 64px; animation-delay: 0s"></div><div class="tile-dark" style="right: 64px; top: 64px; width: 64px; height: 64px; animation-delay: 2.2s"></div></div>
+    <h2 style="margin: 0; font-size: 34px; line-height: 1.08; letter-spacing: -0.02em">Have a project in mind?</h2>
+    <p style="margin: 0; font-size: 15px; color: #D6D4CC">Reply within 24 hours.</p>
+    <a href="#" style="text-decoration: none; text-align: center; background: #C22E22; color: #FFFFFF; padding: 16px; border-radius: 999px; font-size: 16px; font-weight: 600">Book a call</a>
+    <div style="display: flex; align-items: center; gap: 10px; background: #2A2A27; border-radius: 12px; padding: 12px 14px"><span style="flex-grow: 1; font-size: 16px">hello@rafaek.com</span><button type="button" style="min-height: 36px; border: 1px solid #6B6A64; background: transparent; color: #F6F5F1; border-radius: 999px; padding: 6px 12px; font-size: 12px; font-family: inherit">Copy</button></div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px"><a href="https://www.linkedin.com/in/muhammad-rafae-04125a142/" style="color: #F6F5F1; text-decoration: none; text-align: center; border: 1px solid #4A4944; border-radius: 12px; padding: 14px; font-size: 15px">LinkedIn ↗</a><a href="https://github.com/rafaekhatri11" style="color: #F6F5F1; text-decoration: none; text-align: center; border: 1px solid #4A4944; border-radius: 12px; padding: 14px; font-size: 15px">GitHub ↗</a></div>
+    <div style="display: flex; flex-direction: column; gap: 10px; background: #F6F5F1; color: #1B1B19; border-radius: 16px; padding: 16px">
+      <label for="mn" style="font-size: 12px; font-weight: 600">Name</label><input id="mn" type="text" style="height: 44px; border: 1px solid #D9D6CC; border-radius: 10px; padding: 0 12px; font-family: inherit">
+      <label for="me" style="font-size: 12px; font-weight: 600">Email</label><input id="me" type="email" style="height: 44px; border: 1px solid #D9D6CC; border-radius: 10px; padding: 0 12px; font-family: inherit">
+      <label for="mm" style="font-size: 12px; font-weight: 600">Project</label><textarea id="mm" style="height: 80px; border: 1px solid #D9D6CC; border-radius: 10px; padding: 10px; font-family: inherit; resize: none"></textarea>
+      <button type="button" style="height: 48px; border: 0; border-radius: 999px; background: #C22E22; color: #FFFFFF; font-size: 15px; font-weight: 600; font-family: inherit">Send</button>
+    </div>
+  </section>
+
+  <footer style="padding: 36px 20px; display: flex; flex-direction: column; gap: 12px">
+    <div style="font-size: 52px; font-weight: 700; letter-spacing: -0.04em">rafaek.com</div>
+    <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size: 12px; color: #5E5D58">© 2026 Muhammad Rafae Khatri</div><a class="totop" href="#" aria-label="Back to top"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5"/><path d="M5 12l7-7 7 7"/></svg></span></a></div>
+    <span class="note">Button appears after scrolling past the hero (or at the footer), fixed bottom-right · tap → smooth-scroll to top</span>
+  </footer>
+
+  <!-- Floating contact button (shown at first-screen position) -->
+  <div style="position: absolute; left: 20px; right: 20px; top: 1090px; display: flex; flex-direction: column; gap: 6px; align-items: flex-end">
+    <span class="note">Floating CTA appears after hero scrolls away · background squares pulse slower on mobile</span>
+    <a href="#" style="text-decoration: none; background: #C22E22; color: #FFFFFF; padding: 14px 20px; border-radius: 999px; font-size: 15px; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,.2)">Let’s talk →</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"showNotes":{"editor":"boolean","default":true,"section":"View"},"showShapes":{"editor":"boolean","default":true,"section":"View"},"$preview":{"width":390,"height":4500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const cls = [];
+    if (this.props.showNotes === false) cls.push('hide-notes');
+    if (this.props.showShapes === false) cls.push('no-shapes');
+    return { rootClass: cls.join(' ') };
+  }
+}
+</script>
+</body>
+</html>
